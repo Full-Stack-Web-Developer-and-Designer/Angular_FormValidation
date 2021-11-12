@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Validation</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,100,700,900" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <script src="js/lib/angular/angular.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body>
+<div class="page">
+  <section class="card register" ng-app="formValidation" ng-controller = "RegistrationController">
+  <form name="myform" ng-submit="register()" novalidate>
+
+    <div class="textintro">
+      <h1>Angular Form Validation</h1>
+      <p>Please fill out the following form</p>
+      <p ng-show="message">{{ message }}</p>
+    </div>
+
+    <fieldset>
+      <input type="text" name="firstname" 
+        placeholder="First Name" ng-model="user.firstname" ng-required="true">
+        <p class="error validationerror" ng-show="myform.firstname.$invalid && myform.firstname.$touched">You must fill out your firstname!</p>
+      <input type="text" name="lastname"
+        placeholder="Last Name" ng-model="user.lastname" ng-required="true">
+        <p class="error validationerror" ng-show="myform.lastname.$invalid && myform.lastname.$touched">You must fill out your lastname!</p>
+      <input type="email" name="email"
+        placeholder="Email" ng-model="user.email" ng-required="true">
+        <p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched">This must be a valid email!</p>
+      <input type="password" name="password"
+        placeholder="Password" ng-model="user.password" ng-required="true" ng-minlength="6">
+        <p class="error validationerror" ng-show="myform.password.$invalid && myform.password.$touched">Password must be at least 6 characters!</p>
+    </fieldset>
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
+ 
+</section>
+
+</div>
+<div id="footer">
+
+  <section class="footer-social">
+
+    <a href="https://www.facebook.com/mirnes.glamocic.5/" target="_blank">
+      <i class="footer-icon fab fa-facebook"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/mirnes-glamo%C4%8Di%C4%87-47b266109/" target="_blank">
+      <i class="footer-icon fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/Full-Stack-Web-Developer-and-Designer/" target="_blank"><i class="footer-icon fab fa-github"></i>
+    </a>
+    <a href="https://mirnes-glamocic.com/" target="_blank">
+      <i class="footer-icon fab fa-dribbble"></i>
+    </a>
+  </section>
+
+</div>
+</body>
+</html>
