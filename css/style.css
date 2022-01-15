@@ -189,6 +189,9 @@ input.ng-valid.ng-touched {
   background-color: #808080;
   width: 100%;
 }
+#footer a{
+  text-decoration: none;
+}
 .footer-social {
   text-align: center;
 }
