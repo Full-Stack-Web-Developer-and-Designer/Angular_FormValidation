@@ -187,8 +187,6 @@ input.ng-valid.ng-touched {
 }
 #footer {
   background-color: #808080;
-  position: absolute;
-  bottom: 0;
   width: 100%;
 }
 .footer-social {
